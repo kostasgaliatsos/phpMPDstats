@@ -11,7 +11,12 @@
         public function one($id) {
             $data = $this->model->get($id);
             $columns = $this->model->getColumnNames();
-            require_once 'view/viewone.php';
+            if($data) {
+              require_once 'view/viewone.php';
+            }
+            else {
+              require_once 'view/error.php';
+            }
         }
     }
 ?>
